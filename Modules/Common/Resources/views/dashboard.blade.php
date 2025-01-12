@@ -85,7 +85,7 @@
         <!-- Visit vs Visitor  -->
         <!-- ============================================================== -->
         <div class="row">
-            <div class="col-xl-8 col-lg-12 col-md-8 col-sm-12 col-12">
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                 <div class="card">
                     <h5 class="card-header">{{ __('visit_vs_visitor') }}</h5>
                     <div class="card-body">
@@ -120,41 +120,6 @@
             <!-- total sale  -->
             <!-- ============================================================== -->
 
-
-            <div class="col-xl-4 col-lg-12 col-md-4 col-sm-12 col-12">
-                <div class="card">
-                    <h5 class="card-header">{{__('browser_usages')}}</h5>
-                    <div class="card-body">
-                        <canvas id="total-sale" width="220" height="155"></canvas>
-                        <div class="chart-widget-list">
-                            @php
-                                $browserNames =  [];
-                                $browserCounts =  [];
-                                $browserColors =  [];
-                                $i = 0;
-                            @endphp
-                            @foreach($data['usageBrowsers'] as $key => $browser)
-
-
-                            @php
-                            $count = App\VisitorTracker::where('agent_browser','!=','')->where('agent_browser',$browser->agent_browser)->count();
-                                    $i++;
-                                    $browserNames[] =  '"'.$browser->agent_browser.'"';
-                                    $browserCounts[] =  '"'.$count.'"';
-                                    $browserColors[] =  '"'.$data['browserColor'][$i].'"';
-                            @endphp
-                            <p>
-                            <span class="fa-xs text-primary mr-1 legend-title"></span><span class="legend-text" style="color: {{$data['browserColor'][$i]}}"> {{$browser->agent_browser}}</span>
-                                <span class="float-right" style="color: {{$data['browserColor'][$i]}}">{{ number_format($count) }}</span>
-                            </p>
-                            @endforeach
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- ============================================================== -->
-            <!-- end total sale  -->
-            <!-- ============================================================== -->
         </div>
         <div class="row">
             <!-- ============================================================== -->
@@ -294,40 +259,6 @@
 
             }
         });
-
-        // ==============================================================
-        // Total Sale
-        // ==============================================================
-
-        @php
-            $browserNames = implode(',', $browserNames);
-            $browserCounts = implode(',', $browserCounts);
-            $browserColors = implode(',', $browserColors);
-        @endphp
-
-        var ctx = document.getElementById("total-sale").getContext('2d');
-        var myChart = new Chart(ctx, {
-            type: 'doughnut',
-            data: {
-                labels: [{!!$browserNames!!}],
-                datasets: [{
-                    backgroundColor: [{!!$browserColors!!}],
-                    data: [{!!$browserCounts!!}]
-                }]
-            },
-            options: {
-                legend: {
-                    display: false
-
-                }
-            }
-
-        });
-
-
-        // ==============================================================
-        // Location Map
-        // ==============================================================
 
     </script>
 @endpush
