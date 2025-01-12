@@ -18,9 +18,7 @@ class MenuComposer
 
     public function compose(View $view)
     {
-        $menuDetails = Cache::rememberForever('menuDetails' , function (){
-                           return $this->menuService->getMenuDetails();
-                        });
+        $menuDetails = $this->menuService->getMenuDetails();
         $view->with('menuDetails', $menuDetails);
     }
 }

@@ -15,12 +15,10 @@ class AdComposer
 
     public function compose(View $view)
     {
-        $adLocations    = Cache::rememberForever('adLocations', function (){
-                            return AdLocation::with('ad.adImage')
-                                ->where('status', 1)
-                                ->get()
-                                ->keyBy('unique_name');
-                        });
+        $adLocations    = AdLocation::with('ad.adImage')
+        ->where('status', 1)
+        ->get()
+        ->keyBy('unique_name');
 
         $view->with('adLocations', $adLocations);
     }

@@ -17,9 +17,7 @@ class HeaderWidgetComposer
 
     public function compose(View $view)
     {
-        $widgets = Cache::rememberForever('headerWidgets', function (){
-                        return $this->widgetService->getWidgetDetails();
-                    });
+        $widgets = $this->widgetService->getWidgetDetails();
         $view->with('widgets', $widgets);
     }
 }

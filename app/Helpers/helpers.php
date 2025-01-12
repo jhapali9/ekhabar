@@ -13,9 +13,7 @@ use Modules\Appearance\Enums\ThemeVisivilityStatus;
 
 function activeTheme()
 {
-    $activeTheme = Cache::rememberForever('activeTheme', function () {
-        return Theme::where('status', ThemeVisivilityStatus::ACTIVE)->first();
-    });
+    $activeTheme = Theme::where('status', ThemeVisivilityStatus::ACTIVE)->first();
     return $activeTheme;
 }
 

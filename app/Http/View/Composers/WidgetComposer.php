@@ -19,13 +19,9 @@ class WidgetComposer
     public function compose(View $view)
     {
         if (Sentinel::check()):
-            $widgets = Cache::rememberForever('sideWidgetsAuth', function (){
-                return $this->widgetService->getWidgetDetails();
-            });
+            $widgets = $this->widgetService->getWidgetDetails();
         else:
-            $widgets = Cache::rememberForever('sideWidgets', function (){
-                return $this->widgetService->getWidgetDetails();
-            });
+            $widgets = $this->widgetService->getWidgetDetails();
         endif;
         $view->with('widgets', $widgets);
     }

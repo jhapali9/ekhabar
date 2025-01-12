@@ -15,9 +15,7 @@ class SocialComposer
 
     public function compose(View $view)
     {
-        $socialMedias = Cache::rememberForever('socialMedias' , function (){
-                            return SocialMedia::where('status', 1)->get();
-                        });
+        $socialMedias = SocialMedia::where('status', 1)->get();
 
         $view->with('socialMedias', $socialMedias);
     }

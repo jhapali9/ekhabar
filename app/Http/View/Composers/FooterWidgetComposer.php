@@ -17,9 +17,7 @@ class FooterWidgetComposer
 
     public function compose(View $view)
     {
-        $widgets = Cache::rememberForever('$footerWidgets', function (){
-                        return $this->widgetService->getWidgetDetails();
-                    });
+        $widgets = $this->widgetService->getWidgetDetails();
         $view->with('widgets', $widgets);
     }
 }

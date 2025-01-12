@@ -16,11 +16,8 @@ class ActiveLangComposer
 
     public function compose(View $view)
     {
-        $activeLang     = Cache::rememberForever('activeLang', function(){
-                            return Language::orderBy('name', 'ASC')
-                                ->where('status','active')->get();
-
-                            });
+        $activeLang     = Language::orderBy('name', 'ASC')
+        ->where('status','active')->get();
 
         $view->with('activeLang', $activeLang);
     }
