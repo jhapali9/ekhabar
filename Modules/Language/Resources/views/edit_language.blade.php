@@ -22,7 +22,7 @@
                     <ul>
                         @foreach ($errors->all() as $error)
                             <li>{{ $error }}</li>
-                        @endforeach
+                            @endforeach
                     </ul>
                 </div>
             @endif
@@ -70,58 +70,23 @@
 
                                     <div class="col-sm-12">
                                         <div class="form-group">
-                                            <label for="script" class="col-form-label">{{ __('script')}}</label>
-                                            <input id="script" name="script" type="text"
+                                            <input id="script" name="script" type="hidden"
                                                    value="{{ $langConfig->script }}" class="form-control"
                                                    placeholder="Latn">
                                         </div>
                                     </div>
                                     <div class="col-sm-12">
                                         <div class="form-group">
-                                            <label for="native" class="col-form-label">{{ __('native')}}</label>
-                                            <input id="native" name="native" type="text"
+                                            <input id="native" name="native" type="hidden"
                                                    value="{{ $langConfig->native }}" class="form-control"
                                                    placeholder="English">
                                         </div>
                                     </div>
                                     <div class="col-sm-12">
                                         <div class="form-group">
-                                            <label for="regional" class="col-form-label">{{ __('regional')}}</label>
-                                            <input id="regional" name="regional" type="text"
+                                            <input id="regional" name="regional" type="hidden"
                                                    value="{{ $langConfig->regional }}" class="form-control"
                                                    placeholder="en_GB">
-                                        </div>
-                                    </div>
-
-                                    <div class="row p-l-15">
-                                        <div class="col-12 col-md-4">
-                                            <div class="form-title">
-                                                <label for="text_direction">{{ __('text_direction') }}</label>
-                                            </div>
-                                        </div>
-                                        <div class="col-3 col-md-2">
-                                            <label class="custom-control custom-radio custom-control-inline">
-                                                <input type="radio" name="text_direction"
-                                                       id="text_direction_left_to_right" value="LTR"
-                                                       class="custom-control-input"
-                                                       @if ($langInfo->text_direction=='LTR')
-                                                       checked="checked"
-                                                    @endif
-                                                >
-                                                <span class="custom-control-label">{{ __('ltr') }}</span>
-                                            </label>
-                                        </div>
-                                        <div class="col-3 col-md-2">
-                                            <label class="custom-control custom-radio custom-control-inline">
-                                                <input type="radio" name="text_direction"
-                                                       id="text_direction_right_to_left" value="RTL"
-                                                       class="custom-control-input"
-                                                       @if ($langInfo->text_direction=='RTL')
-                                                       checked="checked"
-                                                    @endif
-                                                >
-                                                <span class="custom-control-label">{{ __('rtl')}}</span>
-                                            </label>
                                         </div>
                                     </div>
                                     <div class="row p-l-15">

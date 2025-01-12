@@ -89,7 +89,6 @@ class LanguageController extends Controller
             'name'              => 'required',
             'status'            => 'required',
             'icon_class'        => 'required',
-            'text_direction'    => 'required',
             'code'              => 'required|min:1|max:5|unique:languages'
         ])->validate();
 
@@ -102,7 +101,7 @@ class LanguageController extends Controller
         $langListObj->name              = $request->name;
         $langListObj->code              = $request->code;
         $langListObj->icon_class        = $request->icon_class;
-        $langListObj->text_direction    = $request->text_direction;
+        $langListObj->text_direction    = "LTR";
         $langListObj->status            = $request->status;
 
         $langListObj->save();
@@ -173,7 +172,6 @@ class LanguageController extends Controller
         Validator::make($request->all(), [
             'name'              => 'required',
             'status'            => 'required',
-            'text_direction'    => 'required',
             'icon_class'        => 'required',
             'code'              => 'required|min:2|max:5'
         ])->validate();
@@ -212,7 +210,7 @@ class LanguageController extends Controller
         endif;
 
         $langListObj->icon_class        = $request->icon_class;
-        $langListObj->text_direction    = $request->text_direction;
+        $langListObj->text_direction    = "LTR";
         $langListObj->status            = $request->status;
 
         $langListObj->save();
