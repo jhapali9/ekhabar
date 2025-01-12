@@ -113,9 +113,9 @@ if (!function_exists('pwa_config')) {
     function pwa_config()
     {
         $icon = settingHelper('favicon');
-        $short_name = settingHelper('system_short_name') != '' ? settingHelper('system_short_name') : 'Onno';
+        $short_name = settingHelper('system_short_name') != '' ? settingHelper('system_short_name') : 'ekhab4r';
         $pwa = [
-            'name' => 'Onno',
+            'name' => 'ekhab4r',
             'manifest' => [
                 'name' => config('app.name'),
                 'short_name' => $short_name,
