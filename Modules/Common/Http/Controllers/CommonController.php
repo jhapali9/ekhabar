@@ -19,7 +19,6 @@ class CommonController extends Controller
             $data['totalUniqueVisits'] = count(VisitorTracker::where('date', 'like', date('Y') . '%')->groupBy(['ip','url'])->select('id')->get()->toArray());
             $data['totalUniqueVisitors'] = count(VisitorTracker::where('date', 'like', date('Y') . '%')->groupBy('ip')->selectRaw('COUNT(*) AS total')->pluck('total')->toArray());
             $data['totalVisitors'] = count(VisitorTracker::groupBy('ip')->select('id')->get()->toArray());
-            $data['usageBrowsers'] = VisitorTracker::where('agent_browser','!=','')->groupBy('agent_browser')->get();
             $data['registeredUsers'] = Activation::count();
             $data['publishedPost'] = Post::where('visibility', 1)->where('status', 1)->count();
             $data['submittedPost'] = Post::where('submitted', 1)->count();
