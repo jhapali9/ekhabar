@@ -83,33 +83,6 @@
                                           id="result_content_{{ $quiz_result->id }}">{{ $quiz_result->description }}</textarea>
                             </div>
                         </div>
-                        @if($post_type == 'trivia_quiz')
-                            <div class="col-sm-12">
-                            <div class="row mb-3">
-                                <div class="col-sm-12">
-                                    <label class="control-label">
-                                        {{ __('range_of_correct_ans_for_showing_this_result') }}
-                                    </label>
-                                </div>
-                                <div class="col-sm-6 form-group">
-                                    <input type="number" required
-                                           class="form-control input-question-text"
-                                           data-result-id="result_{{$quiz_result->id}}"
-                                           name="min_correct_count_{{ $quiz_result->id }}"
-                                           placeholder="{{__('minimum_correct')}}"
-                                           value="{{ $quiz_result->min_correct }}" min="0">
-                                </div>
-                                <div class="col-sm-6 form-group">
-                                    <input type="number" required
-                                           class="form-control input-question-text"
-                                           data-result-id="result_{{$quiz_result->id}}"
-                                           name="max_correct_count_{{ $quiz_result->id }}"
-                                           placeholder="{{__('maximum_correct')}}"
-                                           value="{{ $quiz_result->max_correct }}" min="0">
-                                </div>
-                            </div>
-                        </div>
-                        @endif
                     </div>
                 </div>
             </div>

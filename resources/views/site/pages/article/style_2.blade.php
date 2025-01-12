@@ -31,12 +31,6 @@
     @if(settingHelper('adthis_option')==1 and settingHelper('addthis_public_id')!=null and settingHelper('addthis_toolbox')!=null)
         {!! base64_decode(settingHelper('addthis_toolbox')) !!}
     @endif
-    @if(@$post->post_type == 'trivia-quiz')
-        @include('site.pages.article.partials.trivia-quiz')
-    @endif
-    @if(@$post->post_type == 'personality-quiz')
-        @include('site.pages.article.partials.personality-quiz')
-    @endif
 
     @if(@$post->user->permissions['author_show'] == 1)
         @include('site.pages.article.partials.author')

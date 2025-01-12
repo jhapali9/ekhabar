@@ -71,23 +71,6 @@
                                           id="result_content_{{ $result_unique_id }}"></textarea>
                             </div>
                         </div>
-                        @if($post_type == 'trivia_quiz')
-                            <div class="col-sm-12">
-                                <div class="row mb-3">
-                                    <div class="col-sm-12">
-                                        <label class="control-label">
-                                            {{ __('range_of_correct_ans_for_showing_this_result') }}
-                                        </label>
-                                    </div>
-                                    <div class="col-sm-6 form-group">
-                                        <input type="number" min="0" required class="form-control input-question-text" data-result-id="result_{{$result_unique_id}}" name="min_correct_count[]" placeholder="{{__('minimum_correct')}}" value="">
-                                    </div>
-                                    <div class="col-sm-6 form-group">
-                                        <input type="number" min="0" required class="form-control input-question-text" data-result-id="result_{{$result_unique_id}}" name="max_correct_count[]" placeholder="{{__('maximum_correct')}}" value="">
-                                    </div>
-                                </div>
-                            </div>
-                        @endif
                     </div>
                 </div>
             </div>

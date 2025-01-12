@@ -82,8 +82,6 @@
                                            href="{{ route('setting-social-login') }}">{{ __('social_login_settings') }}</a>
                                         <a class="nav-item nav-link" id="setting-config-cache"
                                            href="{{ route('cache') }}">{{ __('cache') }}</a>
-                                           <a class="nav-item nav-link" id="update-database"
-                                           href="{{ route('update-database') }}">{{ __('update') }}</a>
                                     </div>
                                 </nav>
 

@@ -1,5 +1,6 @@
 {
-    "app_name": "NeonX",
+    "recent.news" : "Recent News",
+    "app_name": "ekhab4r",
     "app_full_name": "ekhab4r",
     "login": "Login",
     "registration": "Registration",
@@ -729,7 +730,6 @@
     "update_app_intro": "Update App Intro",
     "gender": "Gender",
     "dob": "Date of Birth",
-    "create_trivia_quiz": "Create Trivia Quiz",
     "questions": "Questions",
     "answers": "Answers",
     "answer_format": "Answer Format",

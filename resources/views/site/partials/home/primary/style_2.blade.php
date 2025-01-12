@@ -1,5 +1,5 @@
 @php
-    $blockPosts = $posts->take(2);
+    $blockPosts = $posts->take(2);  
     $smallPosts = $posts->skip(2)->take(4);
 @endphp
 
@@ -21,7 +21,8 @@
 <div class="sg-home-section">
     <div class="container">
         <div class="row">
-            <div class="col-lg-7">
+            <div class="col-lg-12">
+
                 <div class="home-slider">
                     @foreach($sliderPosts as $post)
                         <div class="sg-post featured-post">
@@ -68,7 +69,12 @@
                     @endforeach
                 </div>
             </div>
-            <div class="col-lg-5">
+            <div class="col-lg-12">
+                <div class="section-title">
+                    <h1>
+                        <b>{{ __('recent.news') }}</b>
+                    </h1>
+                </div>
                 <div class="row">
                     @foreach($blockPosts as $post)
                         <div class="col-md-6">

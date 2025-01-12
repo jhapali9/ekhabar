@@ -61,9 +61,6 @@ Route::group(
 
                     Route::get('/setting-social-login', 'SettingController@settingSocialLogin')->name('setting-social-login')->middleware('permissionCheck:settings_write');
 
-                    Route::get('/update-database', 'UpdateController@updateDatabase')->name('update-database')->middleware('permissionCheck:settings_write');
-                    Route::post('/update-database', 'UpdateController@updateDatabaseStore')->name('update-database')->middleware('permissionCheck:settings_write');
-
                     Route::get('/cache', 'SettingController@cacheView')->name('cache')->middleware('permissionCheck:settings_write');
                     Route::post('/cache-update', 'SettingController@cacheUpdate')->name('cache-update')->middleware('permissionCheck:settings_write');
 

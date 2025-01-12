@@ -28,17 +28,6 @@ Route::group(
                 Route::get('/create/video', 'PostController@createVideoPost')->name('create-video-post')->middleware('permissionCheck:post_write');
                 Route::get('/create/audio', 'PostController@createAudioPost')->name('create-audio-post')->middleware('permissionCheck:post_write');
 
-                //new type of posts routes
-                Route::get('/create/trivia-quiz', 'PostController@createTriviaQuiz')->name('create-trivia-quiz')->middleware('permissionCheck:post_write');
-                Route::get('/create/personality-quiz', 'PostController@createPersonalityQuiz')->name('create-personality-quiz')->middleware('permissionCheck:post_write');
-
-                Route::get('/add-trivia-quiz-question', 'QuizController@addTriviaQuizQuestion')->name('add-trivia-quiz-question')->middleware('permissionCheck:post_write');
-                Route::get('/add-trivia-quiz-question-to-db', 'QuizController@addTriviaQuizQuestionToDB')->name('add-trivia-quiz-question-to-db')->middleware('permissionCheck:post_write');
-                Route::get('/add-trivia-quiz-answer', 'QuizController@addTriviaQuizAnswer')->name('add-trivia-quiz-answer')->middleware('permissionCheck:post_write');
-                Route::get('/add-trivia-quiz-answer-to-db', 'QuizController@addTriviaQuizAnswerToDB')->name('add-trivia-quiz-answer-to-db')->middleware('permissionCheck:post_write');
-                Route::get('/add-trivia-quiz-result', 'QuizController@addTriviaQuizResult')->name('add-trivia-quiz-result')->middleware('permissionCheck:post_write');
-                Route::get('/add-trivia-quiz-result-to-db', 'QuizController@addTriviaQuizResultToDB')->name('add-trivia-quiz-result-to-db')->middleware('permissionCheck:post_write');
-
                 Route::get('/edit/{type}/{id}', 'PostController@editPost')->name('edit-post')->middleware('permissionCheck:post_write');
 
                 Route::delete('/remove-post-form', 'PostController@removePostFrom')->name('remove-post-form')->middleware('permissionCheck:post_write');

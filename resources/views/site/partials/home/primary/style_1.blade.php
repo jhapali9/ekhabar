@@ -20,7 +20,7 @@
 <div class="sg-home-section">
     <div class="container">
         <div class="row">
-            <div class="col-lg-6">
+            <div class="col-lg-12">
                 <div class="post-slider">
                     @foreach($sliderPosts as $post)
                         <div class="sg-post featured-post">
@@ -52,11 +52,15 @@
                     @endforeach
                 </div>
             </div>
-            <div class="col-lg-6">
+            <div class="col-lg-12">
+                <div class="section-title">
+                    <h1>
+                        {{ __('recent.news') }}
+                    </h1>
+                </div>
                 <div class="row">
-                    {{--  @php dd($blockPosts); @endphp --}}
                     @foreach($blockPosts as $post)
-                        <div class="col-md-6">
+                    <div class="col-md-6">
                             <div class="sg-post">
                                 <div class="entry-header">
                                     <div class="entry-thumbnail">

@@ -43,28 +43,6 @@
             <textarea name="answer_text_question_{{ $unique_id }}[]" class="form-control answer-text" required
                       placeholder="{{ __('answer_text') }}"></textarea>
         </div>
-        @if($post_type == 'trivia_quiz')
-            <div class="form-group">
-                <div class="answer-radio-container">
-                    <label class="custom-control custom-radio custom-control-inline">
-                        <input type="radio" required name="correct_answer_question_{{ $unique_id }}"
-                               id="radio_answer_{{ $answer_unique_id }}" value="{{ $answer_unique_id }}"
-                               class="custom-control-input" data-parsley-multiple="correct">
-                        <span class="custom-control-label">{{__('correct')}}</span>
-                    </label>
-                </div>
-            </div>
-        @elseif($post_type == 'personality_quiz')
-
-            <div class="form-group">
-                <div class="result-select px-1">
-                    <select name="selected_result_question_answer_{{ $answer_unique_id }}" class="form-control personality-quiz-result-dropdown rounded">
-                        <option>{{__('select_a_result')}}</option>
-                        <option value="1">1.</option>
-                    </select>
-                </div>
-            </div>
-        @endif
     </div>
 </div>
 

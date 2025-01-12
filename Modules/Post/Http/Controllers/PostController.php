@@ -308,17 +308,6 @@ class PostController extends Controller
             return view('post::video_post_edit',compact('post','categories','subCategories','activeLang', 'countImage', 'countVideo', 'post_contents', 'ads'));
         elseif($type == 'audio'):
             return view('post::audio_post_edit',compact('post','categories','subCategories','activeLang', 'countImage', 'countAudio', 'countVideo', 'post_contents', 'ads'));
-        elseif($type == 'trivia-quiz'):
-            $post           = Post::where('id',$id)->with(['image','video','videoThumbnail','category','subCategory','quizResults'])->first();
-            $quiz_questions = QuizQuestion::with('quizAnswers')->where('post_id', $id)->get();
-//            dd($quiz_questions);
-            return view('post::trivia_quiz_edit',compact('post','categories','subCategories','activeLang', 'countImage', 'countAudio', 'countVideo', 'post_contents','quiz_questions'));
-        elseif($type == 'personality-quiz'):
-            $post           = Post::where('id',$id)->with(['image','video','videoThumbnail','category','subCategory','quizResults'])->first();
-            $quiz_questions = QuizQuestion::with('quizAnswers')->where('post_id', $id)->get();
-//            dd($quiz_questions);
-            return view('post::personality_quiz_edit',compact('post','categories','subCategories','activeLang', 'countImage', 'countAudio', 'countVideo', 'post_contents','quiz_questions'));
-
         endif;
     }
 
@@ -593,28 +582,6 @@ class PostController extends Controller
         $countVideo         = Video::count();
 
         return view('post::audio_post_create',compact('categories', 'subCategories', 'activeLang', 'countImage', 'countAudio', 'countVideo'));
-    }
-
-    public function createTriviaQuiz()
-    {
-        $categories     = Category::where('language', \App::getLocale() ?? settingHelper('default_language'))->get();
-        $subCategories  = SubCategory::all();
-        $activeLang     = Language::where('status', 'active')->orderBy('name', 'ASC')->get();
-        $countImage     = galleryImage::count();
-        $countVideo     = Video::count();
-
-        return view('post::trivia_quiz_create',compact('categories', 'subCategories', 'activeLang', 'countImage', 'countVideo'));
-    }
-
-    public function createPersonalityQuiz()
-    {
-        $categories     = Category::where('language', \App::getLocale() ?? settingHelper('default_language'))->get();
-        $subCategories  = SubCategory::all();
-        $activeLang     = Language::where('status', 'active')->orderBy('name', 'ASC')->get();
-        $countImage     = galleryImage::count();
-        $countVideo     = Video::count();
-
-        return view('post::personality_quiz_create',compact('categories', 'subCategories', 'activeLang', 'countImage', 'countVideo'));
     }
 
     public function filterPost(Request $request){

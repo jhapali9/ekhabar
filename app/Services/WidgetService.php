@@ -89,20 +89,6 @@ class WidgetService extends Service
                 $query->where('auth_required',0); })
             ->get();
     }
-    private function quiz()
-    {
-        return Post::with(['image', 'user','category'])
-            ->where('post_type', 'trivia-quiz')
-            ->orWhere('post_type', 'personality-quiz')
-            ->orderBy('id', 'desc')
-            ->take(4)
-            ->where('language', \App::getLocale() ?? settingHelper('default_language'))
-            ->where('visibility', 1)
-            ->where('status', 1)
-            ->when(Sentinel::check()== false, function ($query) {
-                $query->where('auth_required',0); })
-            ->get();
-    }
     private function featuredPosts()
     {
         return Post::with(['image', 'user','category'])

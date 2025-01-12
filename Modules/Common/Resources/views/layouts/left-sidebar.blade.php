@@ -41,12 +41,6 @@
                                         <li class="nav-item">
                                             <a class="nav-link @yield('create_audio')" href="{{ route('create-audio-post') }}">{{ __('create_audio_post') }} </a>
                                         </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link @yield('create_trivia_quiz')" href="{{ route('create-trivia-quiz') }}">{{ __('create_trivia_quiz') }} </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link @yield('create_personality_quiz')" href="{{ route('create-personality-quiz') }}">{{ __('create_personality_quiz') }} </a>
-                                        </li>
                                     @endif
                                     <li class="nav-item">
                                         <a class="nav-link @yield('post-active')" href="{{ route('post') }}">{{ __('all_post') }}</a>
@@ -417,11 +411,6 @@
                                     <li class="nav-item ">
                                         <a class="nav-link @yield('cache-route-config')" href="{{ route('cache') }}">
                                             {{__('cache')}}
-                                        </a>
-                                    </li>
-                                    <li class="nav-item ">
-                                        <a class="nav-link @yield('update-database')" href="{{ route('update-database') }}">
-                                            {{__('update')}}
                                         </a>
                                     </li>
 

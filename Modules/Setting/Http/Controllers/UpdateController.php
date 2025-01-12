@@ -113,12 +113,6 @@ class UpdateController extends Controller
         }
     }
 
-    public function updateDatabase()
-    {
-        return view('setting::update-database');
-
-    }
-
     public function updateDatabaseStore(Request $request)
     {
 

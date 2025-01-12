@@ -1,13 +1,11 @@
 @extends('site.layouts.app')
 
 @section('content')
-    @if(!blank($primarySectionPosts))
     @include('site.partials.home.primary_section', [
         'section' => $primarySection,
         'posts' => $primarySectionPosts,
         'sliderPosts' => $sliderPosts,
     ])
-    @endif
 
     <div class="sg-main-content mb-4">
         <div class="container">
