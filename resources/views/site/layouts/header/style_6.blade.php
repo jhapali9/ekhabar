@@ -5,7 +5,7 @@
                 <div class="left-contennt d-flex d-flex-style-3">
                     <div class="weather-content d-flex mr-5">
                         <div class="date">
-                            <span><i class="fa fa-calendar mr-2" aria-hidden="true"></i>{{{{ Carbon\Carbon::parse(date('l, d F Y'))->translatedFormat('l, d F Y')}}}}</span>
+                            <span><i class="fa fa-calendar mr-2" aria-hidden="true"></i>{{ Carbon\Carbon::parse(date('l, d F Y'))->translatedFormat('l, d F Y') }}</span>
                         </div>
                     </div>
                 </div>

@@ -11,7 +11,7 @@
                      <div class="d-flex  justify-content-between">
                          <div class="weather-content d-flex align-self-center">
                              <div class="date">
-                                 <span><i class="fa fa-calendar mr-2" aria-hidden="true"></i>{{{{ Carbon\Carbon::parse(date('l, d F Y'))->translatedFormat('l, d F Y')}}}}</span>
+                                 <span><i class="fa fa-calendar mr-2" aria-hidden="true"></i>{{ Carbon\Carbon::parse(date('l, d F Y'))->translatedFormat('l, d F Y') }}</span>
                              </div>
                          </div>
                          <div class="sg-search">

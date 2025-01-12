@@ -4,7 +4,7 @@
             <div class="d-md-flex justify-content-md-between">
                 <div class="left-contennt">
                     <ul class="global-list">
-                        <li><i class="fa fa-calendar mr-2" aria-hidden="true"></i>{{{{ Carbon\Carbon::parse(date('l, d F Y'))->translatedFormat('l, d F Y')}}}}</li>
+                        <li><i class="fa fa-calendar mr-2" aria-hidden="true"></i>{{ Carbon\Carbon::parse(date('l, d F Y'))->translatedFormat('l, d F Y') }}</li>
                     </ul>
                 </div>
                 <div class="right-content d-flex">
