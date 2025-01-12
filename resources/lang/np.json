@@ -28,7 +28,6 @@
     "modules": "Modules",
     "permission_management": "Permission Management",
     "language_settings": "Language Settings",
-    "system_update": "System Update",
     "latest_version":"Latest Version",
     "add_role": "Add Role",
     "name": "Name",
@@ -765,7 +764,6 @@
     "is_featured": "Is featured",
     "top_stories": "Top Stories",
     "latest_posts": "Latest Posts",
-    "mobile_app": "Mobile App",
     "audio_gallery": "Audio Gallery",
     "cache_update": "Cache Update",
     "cache": "Cache"

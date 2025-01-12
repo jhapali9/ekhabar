@@ -430,55 +430,6 @@
                         </li>
                     @endif
 
-                    @if(Sentinel::getUser()->hasAccess(['api_read']) || Sentinel::getUser()->hasAccess(['api_write'])|| Sentinel::getUser()->hasAccess(['api_delete']))
-                        <li class="nav-item">
-                        <a class="nav-link @yield('api_active')" href="#" data-toggle="collapse" @yield('api', 'aria-expanded=false') data-target="#submenu-112" aria-controls="submenu-112">
-                            <i class="fas fa-fw fa-mobile"></i>{{__('mobile_app')}}
-                        </a>
-                        <div id="submenu-112" class="collapse submenu @yield('api-show')">
-                            <ul class="nav flex-column">
-                                <li class="nav-item ">
-                                    <a class="nav-link @yield('api-settings')" href="{{ route('api-settings') }}">
-                                        {{__('api_settings')}}
-                                    </a>
-                                </li>
-
-                                <li class="nav-item ">
-                                    <a class="nav-link @yield('android-settings')" href="{{ route('android-settings') }}">
-                                        {{__('android_settings')}}
-                                    </a>
-                                </li>
-
-                                <li class="nav-item ">
-                                    <a class="nav-link @yield('ios-settings')" href="{{ route('ios-settings') }}">
-                                        {{__('ios_settings')}}
-                                    </a>
-                                </li>
-
-                                <li class="nav-item ">
-                                    <a class="nav-link @yield('app-config')" href="{{ route('app-config') }}">
-                                        {{__('app_config')}}
-                                    </a>
-                                </li>
-
-                                <li class="nav-item ">
-                                    <a class="nav-link @yield('ads-config')" href="{{ route('ads-config') }}">
-                                        {{__('ads_config')}}
-                                    </a>
-                                </li>
-
-                                <li class="nav-item ">
-                                    <a class="nav-link @yield('app-intro')" href="{{ route('app-intro') }}">
-                                        {{__('app_intro')}}
-                                    </a>
-                                </li>
-
-                            </ul>
-                        </div>
-                    </li>
-                    @endif
-
-
                     @if(Sentinel::getUser()->hasAccess(['language_settings_read']) || Sentinel::getUser()->hasAccess(['language_settings_write']) || Sentinel::getUser()->hasAccess(['language_settings_delete']))
                         <li class="nav-item">
                             <a class="nav-link @yield('language-setting')" href="{{route('language-settings')}}">
@@ -487,13 +438,6 @@
                         </li>
                     @endif
 
-                    @if(Sentinel::getUser()->hasAccess(['system_update_read']) || Sentinel::getUser()->hasAccess(['system_update_write']))
-                        <li class="nav-item">
-                            <a class="nav-link @yield('system-update')" href="{{route('system-update')}}">
-                                <i class="fa fa-solid fa-wrench"></i>{{__('system_update')}}
-                            </a>
-                        </li>
-                    @endif
                     <li class="nav-item">
                         <a class="nav-link" href="#"> </a>
                     </li>
