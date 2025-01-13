@@ -2,19 +2,8 @@
 $headerWidgets = data_get($widgets, \Modules\Widget\Enums\WidgetLocation::HEADER, []);
 @endphp
 
-@if(data_get(activeTheme(), 'options.header_style') == 'header_1')
-    @include('site.layouts.header.style_1', ['headerWidgets' => $headerWidgets])
-@elseif(data_get(activeTheme(), 'options.header_style') == 'header_2')
-    @include('site.layouts.header.style_2', ['headerWidgets' => $headerWidgets])
-@elseif(data_get(activeTheme(), 'options.header_style') == 'header_3')
-    @include('site.layouts.header.style_3', ['headerWidgets' => $headerWidgets])
-@elseif(data_get(activeTheme(), 'options.header_style') == 'header_4')
-    @include('site.layouts.header.style_4', ['headerWidgets' => $headerWidgets])
-@elseif(data_get(activeTheme(), 'options.header_style') == 'header_5')
-    @include('site.layouts.header.style_5', ['headerWidgets' => $headerWidgets])
-@elseif(data_get(activeTheme(), 'options.header_style') == 'header_6')
-    @include('site.layouts.header.style_6', ['headerWidgets' => $headerWidgets])
-@endif
+
+@include('site.layouts.header.style', ['headerWidgets' => $headerWidgets])
 
 
 @if(data_get(activeTheme(), 'options.header_style') != 'header_1')

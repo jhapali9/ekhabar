@@ -1,0 +1,20 @@
+[2025-01-13 07:07:10] production.ERROR: Uncaught ErrorException: include(/var/www/html/ekhabar/vendor/composer/../../Modules/Api/Http/Middleware/CheckAppKeyMiddleware.php): Failed to open stream: No such file or directory in /var/www/html/ekhabar/vendor/composer/ClassLoader.php:571
+Stack trace:
+#0 /var/www/html/ekhabar/vendor/composer/ClassLoader.php(571): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError()
+#1 /var/www/html/ekhabar/vendor/composer/ClassLoader.php(571): include()
+#2 /var/www/html/ekhabar/vendor/composer/ClassLoader.php(428): Composer\Autoload\includeFile()
+#3 [internal function]: Composer\Autoload\ClassLoader->loadClass()
+#4 Command line code(1): ReflectionMethod->__construct()
+#5 {main}
+  thrown {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Uncaught ErrorException: include(/var/www/html/ekhabar/vendor/composer/../../Modules/Api/Http/Middleware/CheckAppKeyMiddleware.php): Failed to open stream: No such file or directory in /var/www/html/ekhabar/vendor/composer/ClassLoader.php:571
+Stack trace:
+#0 /var/www/html/ekhabar/vendor/composer/ClassLoader.php(571): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError()
+#1 /var/www/html/ekhabar/vendor/composer/ClassLoader.php(571): include()
+#2 /var/www/html/ekhabar/vendor/composer/ClassLoader.php(428): Composer\\Autoload\\includeFile()
+#3 [internal function]: Composer\\Autoload\\ClassLoader->loadClass()
+#4 Command line code(1): ReflectionMethod->__construct()
+#5 {main}
+  thrown at /var/www/html/ekhabar/vendor/composer/ClassLoader.php:571)
+[stacktrace]
+#0 {main}
+"} 

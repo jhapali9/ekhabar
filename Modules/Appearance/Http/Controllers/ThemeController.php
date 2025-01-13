@@ -78,11 +78,6 @@ class ThemeController extends Controller
 
     public function updateThemeOption(Request $request)
     {
-        Validator::make($request->all(), [
-            'header_style' => 'required',
-            'footer_style' => 'required'
-        ])->validate();
-
         $inputs             = $request->except(['_token']);
 
         $theme              = Theme::where('status', ThemeVisivilityStatus::ACTIVE)->where('name', 'theme_one')->first();

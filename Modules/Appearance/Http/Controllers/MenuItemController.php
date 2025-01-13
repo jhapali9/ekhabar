@@ -19,9 +19,11 @@ use Modules\Post\Entities\SubCategory;
 class MenuItemController extends Controller
 {
     public function menuItem(){
+    
 
         $menuLocations      = MenuLocation::with('menu')->get();
         $menus              = Menu::all();
+        // dd($menus);
         $selectedMenu       = Menu::first();
         $selectedLanguage   = settingHelper('default_language');
         $categories         = Category::orderBy('id','ASC')->where('language',$selectedLanguage)->get();
@@ -280,7 +282,7 @@ class MenuItemController extends Controller
 
         for($i=0; $i<$total_item; $i++):
             $order++;
-
+            
             // for making sub menu
             if ($request->menu_lenght[$i] == 1):
                 $main_menu  = $request->menu_item_id[$i];
@@ -289,7 +291,8 @@ class MenuItemController extends Controller
                 $sub_menu   = $request->menu_item_id[$i];
             endif;
 
-            $menuItem           = MenuItem::find($request->menu_item_id[$i]);
+            $menuItem   = MenuItem::find($request->menu_item_id[$i]);
+
 
             $menuItem->label    = $request->label[$i];
 
@@ -303,7 +306,7 @@ class MenuItemController extends Controller
             endif;
 
             if($request->menu_lenght[$i] == 1):
-                $menuItem->is_mega_menu     = $request->is_mega_menu[$i];
+                $menuItem->is_mega_menu     = 'no';
             endif;
 
             $menuItem->order    = $order;

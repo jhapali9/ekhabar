@@ -23,13 +23,12 @@
                     <nav>
                         <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
                             <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#edit-menu" role="tab" aria-controls="nav-home" aria-selected="true">{{__('edit_menu')}}</a>
-                            <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#manage-menu" role="tab" aria-controls="nav-profile" aria-selected="false">{{__('menu_location')}}</a>
                         </div>
                     </nav>
                     <div class="tab-content" id="nav-tabContent">
                         <div class="tab-pane fade show active" id="edit-menu" role="tabpanel" aria-labelledby="nav-home-tab">
                             <div class="row">
-                                <div class="col-md-12">
+                                {{-- <div class="col-md-12">
                                     <div class="bg-white p-20 m-b-20">
                                         {!!  Form::open(['route' => 'search-menu-item','method' => 'get','class' => 'form-inline']) !!}
                                             <div class="form-group menu-select">
@@ -61,7 +60,7 @@
                                                    data-toggle="modal" data-target="#common-modal"> {{ __('create_new_menu') }}</a>
                                         {{ Form::close() }}
                                     </div>
-                                </div>
+                                </div> --}}
                                 <div class="col-12">
                                     <div class="add-new-page  bg-white p-20 m-b-20" id=div_menu_create>
                                     {!!  Form::open(['route' => 'add-menu', 'method' => 'post']) !!}
@@ -476,16 +475,6 @@
                                                                                         <span class="custom-control-label">{{ __('open_in_new_teb') }}</span>
                                                                                     </label>
                                                                                 </div>
-
-                                                                                <div class="form-group" id="mega-menu-area">
-                                                                                    <label for="is_mega_menu" class="col-form-label">{{ __('is_mega_menu') }}</label>
-                                                                                    <select name="is_mega_menu[]" id="is_mega_menu" class="form-control">
-                                                                                        <option value="no" {{$item->is_mega_menu == 'no'?'selected':''}}>{{ __('no') }}</option>
-                                                                                        <option value="tab" {{$item->is_mega_menu == 'tab'?'selected':''}}>{{ __('tab_type') }}</option>
-                                                                                        <option value="category" {{$item->is_mega_menu == 'category'?'selected':''}}>{{ __('category_type') }}</option>
-
-                                                                                    </select>
-                                                                                </div>
                                                                                 @if(Sentinel::getUser()->hasAccess(['menu_delete']))
                                                                                 <div class="form-group">
                                                                                     <a href="javascript:void(0)" onclick="delete_menu_item('{{ $item->id }}')"
@@ -524,14 +513,6 @@
                                                                                         <input type="hidden" name="new_teb[]" value="{{ $item->new_teb }}"><input type="checkbox" class="custom-control-input" @if($item->new_teb==1) checked @endif onclick="this.previousSibling.value=1-this.previousSibling.value">
                                                                                         <span class="custom-control-label">{{ __('open_in_new_teb') }}</span>
                                                                                     </label>
-                                                                                </div>
-                                                                                <div class="form-group" id="mega-menu-area" >
-                                                                                    <label for="menu_id" class="col-form-label" >{{ __('is_mega_menu') }}</label>
-                                                                                    <select name="is_mega_menu[]" id="is_mega_menu" class="form-control">
-                                                                                            <option value="no" {{$item->is_mega_menu == 'no'?'selected':''}}>{{ __('no') }}</option>
-                                                                                            <option value="tab" {{$item->is_mega_menu == 'tab'?'selected':''}}>{{ __('tab_type') }}</option>
-                                                                                            <option value="category" {{$item->is_mega_menu == 'category'?'selected':''}}>{{ __('category_type') }}</option>
-                                                                                    </select>
                                                                                 </div>
                                                                                 @if(Sentinel::getUser()->hasAccess(['menu_delete']))
                                                                                 <div class="form-group">
@@ -575,14 +556,6 @@
                                                                                                         <span class="custom-control-label">{{ __('open_in_new_teb') }}</span>
                                                                                                     </label>
                                                                                                 </div>
-                                                                                                <div class="form-group" id="mega-menu-area" >
-                                                                                                    <label for="menu_id" class="col-form-label" >{{ __('is_mega_menu') }}</label>
-                                                                                                    <select name="is_mega_menu[]" id="is_mega_menu" class="form-control">
-                                                                                                            <option value="no">{{ __('no') }}</option>
-                                                                                                            <option value="tab">{{ __('tab_type') }}</option>
-                                                                                                            <option value="category">{{ __('category_type') }}</option>
-                                                                                                    </select>
-                                                                                                </div>
                                                                                                 @if(Sentinel::getUser()->hasAccess(['menu_delete']))
                                                                                                 <div class="form-group">
                                                                                                     <a href="javascript:void(0)" onclick="delete_menu_item('{{ $child->id }}')"
@@ -618,14 +591,6 @@
                                                                                                         <input type="hidden" name="new_teb[]" value="{{ $child->new_teb }}"><input type="checkbox" class="custom-control-input" @if($child->new_teb==1) checked @endif onclick="this.previousSibling.value=1-this.previousSibling.value">
                                                                                                         <span class="custom-control-label">{{ __('open_in_new_teb') }}</span>
                                                                                                     </label>
-                                                                                                </div>
-                                                                                                <div class="form-group" id="mega-menu-area">
-                                                                                                    <label for="menu_id" class="col-form-label" >{{ __('is_mega_menu') }}</label>
-                                                                                                    <select name="is_mega_menu[]" id="is_mega_menu" class="form-control">
-                                                                                                            <option value="no">{{ __('no') }}</option>
-                                                                                                            <option value="tab">{{ __('tab_type') }}</option>
-                                                                                                            <option value="category">{{ __('category_type') }}</option>
-                                                                                                    </select>
                                                                                                 </div>
                                                                                                 @if(Sentinel::getUser()->hasAccess(['menu_delete']))
                                                                                                 <div class="form-group">
@@ -666,14 +631,6 @@
                                                                                                                     {{-- <input type="checkbox" name="new_teb[]" @if($subChild->new_teb==0) value="0" @else value="1" checked  @endif class="custom-control-input"> --}}
                                                                                                                     <span class="custom-control-label">{{ __('open_in_new_teb') }}</span>
                                                                                                                 </label>
-                                                                                                            </div>
-                                                                                                            <div class="form-group" id="mega-menu-area" >
-                                                                                                                <label for="menu_id" class="col-form-label" >{{ __('is_mega_menu') }}</label>
-                                                                                                                <select name="is_mega_menu[]" id="is_mega_menu" class="form-control">
-                                                                                                                        <option value="no">{{ __('no') }}</option>
-                                                                                                                        <option value="tab">{{ __('tab_type') }}</option>
-                                                                                                                        <option value="category">{{ __('category_type') }}</option>
-                                                                                                                </select>
                                                                                                             </div>
                                                                                                             @if(Sentinel::getUser()->hasAccess(['menu_delete']))
                                                                                                             <div class="form-group">
@@ -717,50 +674,6 @@
                                     </div>
 
                                     {{ Form::close() }}
-                                </div>
-                            </div>
-                        </div>
-                        <div class="tab-pane fade show" id="manage-menu" role="tabpanel" aria-labelledby="nav-home-tab">
-                            <div class="row">
-                                <div class="col-12">
-                                    <div class="add-new-page  bg-white p-20 m-b-20" >
-                                        <div class="table-responsive all-pages">
-                                            {!!  Form::open(['route' => 'save-menu-locations','method' => 'post', 'enctype'=>'multipart/form-data']) !!}
-                                                <table class="table table-borderless">
-                                                    <thead>
-                                                        <tr role="row">
-                                                            <th>{{ __('title') }}</th>
-                                                            <th>{{ __('menu') }}</th>
-                                                            <th></th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                    @foreach ($menuLocations as $menuLocation)
-                                                        <tr role="row" class="odd">
-                                                            <td>{{ $menuLocation->title }}</td>
-                                                            <td>
-                                                                <input name="menu_location_id[]" type="hidden" value="{{ $menuLocation->id }}">
-                                                                <select class="form-control" name="menu_id[]">
-                                                                    <option value="">{{ __('select_option') }}</option>
-                                                                    @foreach ($menus as $menu)
-                                                                        <option @if($menu->id==$menuLocation->menu['id']) selected @endif value="{{ $menu->id }}">{{ $menu->title }}</option>
-                                                                    @endforeach
-                                                                </select>
-                                                            </td>
-                                                            <td><a href="javascript:void(0)" class="modal-menu"data-title="{{ __('add_menu') }}"
-                                                                data-url="{{ route('edit-info',['page_name'=>'add-menu']) }}"
-                                                                data-toggle="modal" data-target="#common-modal"> {{ __('create_new_menu') }}</a>
-                                                            </td>
-                                                        </tr>
-                                                    @endforeach
-                                                    </tbody>
-                                                </table>
-                                                <div class="pull-right">
-                                                    <button type="submit" class="btn btn-primary">{{ __('update') }}</button>
-                                                </div>
-                                            {{ Form::close() }}
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
                         </div>
