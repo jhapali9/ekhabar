@@ -16,7 +16,9 @@
                     </div>
 
                     @foreach($footerWidgets as $widget)
-                        @if($widget['view'] == 'editor_picks')
+                        @if($widget['view'] == 'newsletter')
+                            @include('site.widgets.footer.newsletter', $widget)
+                        @elseif($widget['view'] == 'editor_picks')
                             @include('site.widgets.footer.editor_picks', $widget)
                         @elseif($widget['view'] == 'categories')
                             @include('site.widgets.footer.categories', $widget)

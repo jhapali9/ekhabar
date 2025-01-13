@@ -234,33 +234,6 @@
                         </li>
                     @endif
 
-                    @if(Sentinel::getUser()->hasAccess(['notification_write']))
-                        <li class="nav-item">
-                            <a class="nav-link @yield('notification_active')" href="#" data-toggle="collapse" @yield('notification-aria-expanded', 'aria-expanded=false') data-target="#submenu-113" aria-controls="submenu-113">
-                                <i class="fas fa-bell"></i>{{__('notification')}}
-                            </a>
-                            <div id="submenu-113" class="collapse submenu @yield('notification-show')">
-                                <ul class="nav flex-column">
-                                    <li class="nav-item ">
-                                        <a class="nav-link @yield('send_notification')" href="{{ route('send-notification') }}">
-                                            {{__('send_notification')}}
-                                        </a>
-                                    </li>
-                                    <li class="nav-item ">
-                                        <a class="nav-link @yield('send_custom_notification')" href="{{ route('send-custom-notification') }}">
-                                            {{ __('send_custom_notification') }}
-                                        </a>
-                                    </li>
-                                    <li class="nav-item ">
-                                        <a class="nav-link @yield('notify_setting')" href="{{ route('notification-setting') }}">
-                                            {{ __('settings') }}
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-                    @endif
-
                     @if(Sentinel::getUser()->hasAccess(['newsletter_read']) || Sentinel::getUser()->hasAccess(['newsletter_write']) || Sentinel::getUser()->hasAccess(['newsletter_delete']))
                         <li class="nav-item">
                             <a class="nav-link @yield('newsletter_active')" href="#" data-toggle="collapse" @yield('newsletter-aria-expanded', 'aria-expanded=false') data-target="#submenu-114" aria-controls="submenu-114">
@@ -352,11 +325,6 @@
                                         </a>
                                     </li>
                                     <li class="nav-item ">
-                                        <a class="nav-link @yield('setting-storage')" href="{{ route('setting-storage') }}">
-                                            {{__('storage_settings')}}
-                                        </a>
-                                    </li>
-                                    <li class="nav-item ">
                                         <a class="nav-link @yield('setting-seo')" href="{{ route('setting-seo') }}">
                                             {{__('seo_settings')}}
                                         </a>
@@ -382,12 +350,6 @@
                                     <li class="nav-item ">
                                         <a class="nav-link @yield('setting-custom')" href="{{ route('setting-custom-header-footer') }}">
                                             {{__('custom_header_footer')}}
-                                        </a>
-                                    </li>
-
-                                    <li class="nav-item ">
-                                        <a class="nav-link @yield('cron-information')" href="{{ route('cron-information') }}">
-                                            {{__('cron_information')}}
                                         </a>
                                     </li>
 

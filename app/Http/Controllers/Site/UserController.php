@@ -82,7 +82,7 @@ class UserController extends Controller
                 'last_name'     => ['required', 'string', 'max:255'],
                 'email'         => ['required', 'string', 'email', 'max:255'],
                 'password'      => ['required', 'string', 'min:6'],
-                'phone'         => ['min:11','max:14'],
+                'phone'         => ['min:10','max:10'],
                 'dob'           => 'required',
                 'gender'        => 'required',
                 'g-recaptcha-response'      => ['required', 'string'],
@@ -94,7 +94,7 @@ class UserController extends Controller
                 'last_name'     => ['required', 'string', 'max:255'],
                 'email'         => ['required', 'string', 'email', 'max:255'],
                 'password'      => ['required', 'string', 'min:6'],
-                'phone'         => ['min:11','max:14'],
+                'phone'         => ['min:10','max:10'],
                 'dob'           => 'required',
                 'gender'        => 'required',
             ]);

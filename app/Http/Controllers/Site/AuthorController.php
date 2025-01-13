@@ -73,7 +73,7 @@ class AuthorController extends Controller
             'first_name' => 'required',
             'last_name' => 'required|min:2|max:30',
             'profile_image' => 'mimes:jpg,JPG,JPEG,jpeg,png|max:5120',
-            'phone'         => ['min:11','max:14'],
+            'phone'         => ['min:10','max:10'],
             'dob'           => 'required',
             'gender'        => 'required',
         ])->validate();

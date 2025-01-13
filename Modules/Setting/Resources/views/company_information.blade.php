@@ -56,9 +56,6 @@
                                            role="tab">{{ __('company_informations') }}</a>
                                         <a class="nav-item nav-link" id="mail-settings"
                                            href="{{ route('setting-email') }}" role="tab">{{ __('email_settings') }}</a>
-                                        <a class="nav-item nav-link" id="storage-settings"
-                                           href="{{ route('setting-storage') }}"
-                                           role="tab">{{ __('storage_settings') }}</a>
                                         <a class="nav-item nav-link" id="seo-settings" href="{{ route('setting-seo') }}"
                                            role="tab">{{ __('seo_settings') }}</a>
                                         <a class="nav-item nav-link" id="recaptcha-settings"
@@ -70,14 +67,11 @@
                                            href="{{ route('settings-ffmpeg') }}" role="tab">{{ __('ffmpeg_settings') }}</a>
                                         <a class="nav-item nav-link" id="setting-custom"
                                            href="{{ route('setting-custom-header-footer') }}">{{ __('custom_header_footer') }}</a>
-                                        <a class="nav-item nav-link" id="cron-information"
-                                           href="{{ route('cron-information') }}">{{ __('cron_information') }}</a>
                                         <a class="nav-item nav-link" id="preference-control"
                                            href="{{ route('preferene-control') }}">{{ __('preference_setting') }}</a>
                                         <a class="nav-item nav-link" id="setting-social-login"
                                            href="{{ route('setting-social-login') }}">{{ __('social_login_settings') }}</a>
-                                        <a class="nav-item nav-link" id="setting-config-cache"
-                                           href="{{ route('cache') }}">{{ __('cache') }}</a>
+                                         
                                     </div>
                                 </nav>
 
@@ -126,14 +120,14 @@
                                                 <label for="email" class="col-form-label">{{ __('email') }}</label>
                                                 <input id="email" name="email" type="email"
                                                        value="{{ settingHelper('email') }}" class="form-control"
-                                                       placeholder="edward_test@domain.com">
+                                                       placeholder="{{ settingHelper('email') }}">
                                             </div>
                                         </div>
                                         <div class="col-sm-12">
                                             <div class="form-group">
                                                 <label for="phone" class="col-form-label">{{ __('phone') }}</label>
                                                 <input id="phone" name="phone" value="{{ settingHelper('phone') }}"
-                                                       type="text" class="form-control" placeholder="(541) 754-3010">
+                                                       type="text" class="form-control" placeholder="+977 XXXXXXXX">
                                             </div>
                                         </div>
                                         <div class="col-sm-12">
@@ -142,14 +136,14 @@
                                                        class="col-form-label">{{ __('zip_code') }}</label>
                                                 <input id="zip_code" name="zip_code"
                                                        value="{{ settingHelper('zip_code') }}" type="text"
-                                                       class="form-control" placeholder="1207">
+                                                       class="form-control" placeholder="664400">
                                             </div>
                                         </div>
                                         <div class="col-sm-12">
                                             <div class="form-group">
                                                 <label for="city" class="col-form-label">{{ __('city') }}</label>
                                                 <input id="city" name="city" value="{{ settingHelper('city') }}"
-                                                       type="text" class="form-control" placeholder="1207">
+                                                       type="text" class="form-control" placeholder="Enter your city">
                                             </div>
                                         </div>
                                         <div class="col-sm-12">

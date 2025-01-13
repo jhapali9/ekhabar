@@ -29,7 +29,6 @@ class HomeController extends Controller
             if (!View::exists('site.website.' . $language . '.logged.widgets')):
                 $this->widgetsSection($language);
             endif;
-
             if ($primarySection->status == 1):
                 $primarySectionPosts = Post::with(['category', 'image', 'user'])
                     ->where('visibility', 1)
@@ -88,7 +87,7 @@ class HomeController extends Controller
                 ->where('language', \App::getLocale() ?? settingHelper('default_language'))
                 ->count();
         else:
-            if (!isNull($primarySection)):
+            if ($primarySection):
                 if ($primarySection->status == 1):
                     $primarySectionPosts = Post::with(['category', 'image', 'user'])
                         ->where('visibility', 1)

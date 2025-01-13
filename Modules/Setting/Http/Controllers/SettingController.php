@@ -163,7 +163,7 @@ class SettingController extends Controller
                 endif;
 
             else:
-
+                // dd($request->all());
                 if ($key == "application_name" || $key == "address" || $key == "email" || $key == "phone" || $key == "zip_code" || $key == "city" || $key == "state" || $key == "country" || $key == "website" || $key == "company_registration" || $key == "tax_number" || $key == "about_us_description") :
 
                     $setting            = Setting::where('title', $key)->where('lang', $company_language)->first();
@@ -281,7 +281,6 @@ class SettingController extends Controller
 
     public function getCompanyInfo(Request $request)
     {
-
         $settings           = Setting::where('lang', $request->lang)->get();
 
         if ($request->type == 'company') :
@@ -405,11 +404,6 @@ class SettingController extends Controller
     public function settingsFfmpeg()
     {
         return view('setting::settings_ffmpeg');
-    }
-
-    public function cronInformation()
-    {
-        return view('setting::cron_information');
     }
 
     public function prefereneControl()

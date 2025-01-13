@@ -21,7 +21,7 @@
                     </div>
                     <div class="form-group text-left mb-0">
                         <label>{{ __('phone') }} </label>
-                        <input name="phone" type="text" class="form-control" placeholder="+880123-5488578">
+                        <input name="phone" type="text" class="form-control" placeholder="+977 XXXXXXXX">
                     </div>
                     <div class="form-group text-left mb-0">
                         <label>{{ __('dob') }} *</label>

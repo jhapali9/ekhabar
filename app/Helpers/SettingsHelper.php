@@ -19,7 +19,7 @@ if (!function_exists('settingHelper')) {
             if (!blank($data)) {
                 return $data->value;
             }
-        } elseif ($title == "about_us_description" || $title == "copyright_text" || $title == "address" || $title == "phone" || $title == "zip_code" || $title == "city" || $title == "state" || $title == "country" || $title == "website" || $title == "company_registration" || $title == "tax_number" || $title == "signature" || $title == "onesignal_action_message" || $title == "onesignal_accept_button" || $title == "onesignal_cancel_button" || $title == "seo_title" || $title == "seo_keywords" || $title == "seo_meta_description" || $title == "author_name" || $title == "og_title" || $title == "og_description") {
+        } elseif ($title == 'email' || $title == "about_us_description" || $title == "copyright_text" || $title == "address" || $title == "phone" || $title == "zip_code" || $title == "city" || $title == "state" || $title == "country" || $title == "website" || $title == "company_registration" || $title == "tax_number" || $title == "signature" || $title == "onesignal_action_message" || $title == "onesignal_accept_button" || $title == "onesignal_cancel_button" || $title == "seo_title" || $title == "seo_keywords" || $title == "seo_meta_description" || $title == "author_name" || $title == "og_title" || $title == "og_description") {
 
             if (\App::getLocale() == "") {
                 $default = Setting::where('title', 'default_language')->first();
