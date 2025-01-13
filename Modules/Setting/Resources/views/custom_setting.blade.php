@@ -54,8 +54,6 @@
                                            href="{{ route('setting-company') }}">{{ __('company_informations') }}</a>
                                         <a class="nav-item nav-link" id="mail-settings"
                                            href="{{ route('setting-email') }}">{{ __('email_settings') }}</a>
-                                        <a class="nav-item nav-link" id="storage-settings"
-                                           href="{{ route('setting-storage') }}">{{ __('storage_settings') }}</a>
                                         <a class="nav-item nav-link" id="seo-settings"
                                            href="{{ route('setting-seo') }}">{{ __('seo_settings') }}</a>
                                         <a class="nav-item nav-link" id="recaptcha-settings"
@@ -68,14 +66,11 @@
 
                                         <a class="nav-item nav-link active" id="setting-custom"
                                            href="{{ route('setting-custom-header-footer') }}">{{ __('custom_header_footer') }}</a>
-                                        <a class="nav-item nav-link" id="cron-information"
-                                           href="{{ route('cron-information') }}">{{ __('cron_information') }}</a>
                                         <a class="nav-item nav-link" id="preference-control"
                                            href="{{ route('preferene-control') }}">{{ __('preference_setting') }}</a>
                                         <a class="nav-item nav-link" id="setting-social-login"
                                            href="{{ route('setting-social-login') }}">{{ __('social_login_settings') }}</a>
-                                        <a class="nav-item nav-link" id="setting-config-cache"
-                                           href="{{ route('cache') }}">{{ __('cache') }}</a>
+                                         
                                     </div>
                                 </nav>
 

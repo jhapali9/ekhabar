@@ -79,7 +79,6 @@ class RolesPermissionsController extends Controller
         $roles = Role::withoutSuperadmin()->get();
         $permissions = Permission::select('name')->groupBy('name')->paginate(10);
         $noOfRole = $roles->count();
-
         return view('user::permissions', compact('permissions', 'roles', 'noOfRole'));
     }
 

@@ -63,7 +63,6 @@
                                             <th>{{ __('name') }}</th>
                                             <th>{{ __('email') }}</th>
                                             <th>{{ __('role') }}</th>
-                                            <th>{{ __('status') }}</th>
                                             <th>{{ __('join_date') }}</th>
                                             @if(Sentinel::getUser()->hasAccess(['users_write']) || Sentinel::getUser()->hasAccess(['users_write']))
                                                 <th>{{ __('options') }}</th>
@@ -102,14 +101,6 @@
                                                         {{ __('send_email') }}
                                                     </a>
                                                 </td>
-                                                <td>
-                                                    
-                                                    @if($user->is_subscribe_banned == 0)
-                                                        <label class="label btn-warning">{{ __('inactive') }}</label>
-                                                    @else
-                                                        <label class="label label-success">{{ __('active') }}</label>
-                                                    @endif
-                                                </td>
                                                 <td>{{$user->created_at->toDayDateTimeString()}}</td>
                                                 @if(Sentinel::getUser()->hasAccess(['users_write']) || Sentinel::getUser()->hasAccess(['users_delete']))
                                                     <td>
@@ -119,43 +110,6 @@
                                                                     class="caret"></span>
                                                             </button>
                                                             <ul class="dropdown-menu options-dropdown">
-                                                                @if(Sentinel::getUser()->hasAccess(['users_write']))
-                                                                    <li>
-                                                                        <a href="javascript:void(0)"
-                                                                           class="btn-list-button modal-menu"
-                                                                           data-title="Change User Role"
-                                                                           data-url="{{route('edit-info',['page_name'=>'role-change','param1'=>$user->id,'param2'=> $user->withRoles[0]->id])}}"
-                                                                           data-toggle="modal"
-                                                                           data-target="#common-modal">
-                                                                            <i class="fa fa-user option-icon"></i>
-                                                                            {{ __('change_role') }}
-                                                                        </a>
-                                                                    </li>
-                                                                    <li>
-                                                                            
-                                                                        @if($user->is_subscribe_banned == 1)
-                                                                            <a href="{{ route('ban-subscribe',['user_id'=> $user->id]) }}"><i
-                                                                                    class="fa fa-stop-circle option-icon"></i>{{ __('inactive') }}
-                                                                            </a>
-                                                                        @else
-                                                                            <a href="{{ route('unban-subscribe',['user_id'=> $user->id]) }}"><i
-                                                                                    class="fa fa-stop-circle option-icon"></i>{{ __('active') }}
-                                                                            </a>
-                                                                        @endif
-
-                                                                            
-                                                                        </li>
-                                                                    <li>
-
-                                                                        <a href="javascript:void(0)" class="modal-menu"
-                                                                           data-title="Edit User Info"
-                                                                           data-url="{{route('edit-info',['page_name'=>'edit-user','param1'=>$user->id,'param2'=> $user->withRoles[0]->id])}}"
-                                                                           data-toggle="modal"
-                                                                           data-target="#common-modal"><i
-                                                                                class="fa fa-edit option-icon"></i>{{ __('edit') }}
-                                                                        </a>
-                                                                    </li>
-                                                                @endif
                                                                 @if(Sentinel::getUser()->hasAccess(['users_delete']))
                                                                     <li>
                                                                         <a href="javascript:void(0)"
