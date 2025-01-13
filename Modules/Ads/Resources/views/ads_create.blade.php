@@ -87,14 +87,7 @@
                                     <option value=""> {{ __('select_option') }}</option>
                                     <option value="code"> {{ __('code') }}</option>
                                     <option value="image"> {{ __('image') }}</option>
-                                    <option value="text"> {{ __('text') }}</option>
                                 </select>
-                            </div>
-                        </div>
-                        <div class="col-sm-12 d-none" id="div_ad_text">
-                            <div class="form-group">
-                                <label for="ad_text" class="col-form-label">{{ __('ad_text') }}*</label>
-                                <textarea  name="ad_text" id="content" class="form-control" rows="6"></textarea>
                             </div>
                         </div>
                         <div class="col-sm-12 d-none" id="div_ad_code">

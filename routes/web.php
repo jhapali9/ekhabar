@@ -24,3 +24,11 @@
 //         });
 //         });
 //     });
+
+Route::get('/test',function(){
+    if (in_array('image/gif', \Intervention\Image\ImageManagerStatic::getSupportedFormats())) {
+        echo 'GIF is supported!';
+    } else {
+        echo 'GIF is not supported!';
+    }
+});

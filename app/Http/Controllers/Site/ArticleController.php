@@ -290,7 +290,7 @@ class ArticleController extends Controller
 		Validator::make($request->all(), [
 			'title' => 'required|min:2|unique:posts',
 			'content' => 'required',
-			'image' => 'required|mimes:jpg,JPG,JPEG,jpeg,png|max:5120'
+			'image' => 'required|mimes:jpg,JPG,JPEG,jpeg,png,gif|max:5120'
 		])->validate();
 
 		try {
@@ -339,7 +339,7 @@ class ArticleController extends Controller
 	public function imageUpload($request)
 	{
 		$validation = Validator::make($request->all(), [
-			'image' => 'required|mimes:jpg,JPG,JPEG,jpeg,png|max:5120',
+			'image' => 'required|mimes:jpg,JPG,JPEG,jpeg,png,gif|max:5120',
 		])->validate();
 
 		try {
